@@ -13,6 +13,9 @@ $(document).ready(function(e){
 			  navigator.notification.alert('Todos los campos son requeridos', null, "Hotel","Ok");
 		  }
 	   });
+	   
+	   $('#regFoto').tap(function(){
+		      tomarFoto();	   });
 	}, false);
 });
 
