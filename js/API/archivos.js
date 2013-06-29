@@ -2,7 +2,7 @@
 function subirFoto(foto, nom){
 	var options = new FileUploadOptions();
 	options.fileKey="archivo";
-	options.fileName="Josue.jpg";
+	options.fileName="Josuel.jpg";
 
 	var ft = new FileTransfer();
 	ft.upload(foto, "http://www.igitsoft.com/pgtest.php", function(r){
