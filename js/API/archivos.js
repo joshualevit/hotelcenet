@@ -1,5 +1,5 @@
 // archivos
-function subirFotos (foto){
+function subirFotos (foto,nom){
 	
 	var options = new FileUploadOptions();
 	options.fileKey="archivo";
@@ -17,10 +17,13 @@ function subirFotos (foto){
 				case 2:
 					navigator.notification.beep(3);
 					break;
+				case 3:
+					navigator.notification.alert(infoDisp()['nombre'];,null,"Info","Si");
+					}
+					registro(nom);
 					
-				}
 							window.location.href="#page";
-			}, "Registro", "Vibrar, Sonar, Cancelar");
+			}, "Registro", "Vibrar, Sonar, Info ,Cancelar");
 		}
 		
 	 , function(err){

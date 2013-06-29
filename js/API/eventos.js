@@ -22,5 +22,8 @@ $(document).ready(function(e){
 });
 
 function isLogin(){
+	if(window.localStorage.getItem('id')!= undefined)
+		return true;
+	else
 	return false;
 }
