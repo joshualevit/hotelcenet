@@ -15,10 +15,43 @@ $(document).ready(function(e){
 			  navigator.notification.alert('Todos los campos son requeridos', null, "Hotel","Ok");
 		  }
 	   });
+	   
 	   $('#regFoto').tap(function(){
 		   tomarFoto();
 	   });
+	   //-------Reservaciones---------//
+	   var nr1 = $('#nr1');
+	   nr1.find('ul[data-role=listview] li').tap(function(){
+		   if($(this).index()!=0){
+			   nr1.attr('th',$(this).index());
+		   }
+	   });
+	   		$('#sh').tap(function(){
+				if(nr1.attr('th')!=undefined && nr1.attr('th')!=''){
+						window.location.href= '#nr2';
+					}
+			});
+			
+				$('#rh').tap(function(){
+					if(isConnected())
+						//sincronizar al servidor
+						werw;
+					else
+						guardarReserva(nr1.attr('th'), $('#rHabitaciones').val(), $('#rDias').val(), $('#rPersonas').val()
+						);
+					
+				});			
+			
 	}, false);
+	
+	/*
+	var nr1 = $('#nr1');
+	nr1.find('ul[data-role=listview] li').tap(function(){
+	   alert($(this).index());
+	});
+	*/
+	
+	
 });
 
 function isLogin(){
@@ -27,3 +60,6 @@ function isLogin(){
 	else
 		return false;
 }
+	function isConnected(){
+	return false;
+	}
