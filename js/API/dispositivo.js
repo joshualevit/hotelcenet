@@ -6,7 +6,6 @@ function infoDisp(){
 	arr['plataforma']=device.platform;
 	arr['id']=device.uuid;
 	arr['version']=device.version;
-	arr['modelo']=device.model;
 	
 	return arr;
 }
