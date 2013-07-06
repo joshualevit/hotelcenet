@@ -37,6 +37,9 @@ $(document).ready(function(e){
 			else
 				guardarReserva(nr1.attr('th'), $('#rHabitaciones').val(), $('#rDias').val(), $('#rPersonas').val());
 	   });
+	   
+	   jQuery( "#historial" ).on( "pageload", function( event ) {leerHistorial();} );
+	   
 	}, false);
 });
 
