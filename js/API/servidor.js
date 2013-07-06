@@ -12,3 +12,21 @@ function enviarDatos(nom, tel, email, foto){
 		}
 	});
 }
+function subirReserva(id,th,ha,di,pe){
+$.ajax({
+		type: "POST",
+		url: "http://www.igitsoft.com/pgtest.php",
+		data: "nom="+th+"&tel="+ha+"&mai="+di+"&pe="+pe
+	}).done(function(msg) {
+		if(msg==1){
+			navigator.notification.alert("Reserva Sincronizada Exitosamente",function(){
+				guardarHistorial(th,ta,di,pe);//
+				borrarReserva(id);
+			},"Reserva","Aceptar");
+										 
+										 
+		}else{
+			navigator.notification.alert("Error al Registrarse", null, "Registro", "Aceptar");	
+		}
+	});
+}

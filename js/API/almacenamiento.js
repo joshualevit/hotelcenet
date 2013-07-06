@@ -30,3 +30,37 @@ function guardarHistorial(th, ha, di, pe){
 		navigator.notification.alert("Hecho", null, "Guardado","Aceptar");
 	});
 }
+function leerReservas(){
+	accesoBD().transaction(function(tx){
+		tx.executeSql('SELECT * FROM  reservas',[],function(tx2, resultado){
+				var largo= resultado.rows.length;
+				if(largo>0){
+					for(i=0;i<largo;i++){
+						
+						/*var th = resultado.rows.item(i).th;
+						var ha = resultado.rows.item(i).ha;
+						var di = resultado.rows.item(i).di;
+						var pe = resultado.rows.item(i).pe;*/
+					
+						subirReserva(reusltado.rows.item(i).id,resultado.rows.item(i).th,resultado.rows.item(i).ha,resultado.rows.item(i).di,resultado.rows.item(i).pe)
+						
+					}
+				}
+		}, function error(){
+			alert("Error processing SQL: "+err);
+			});
+	}, function(err){
+		navigator.notification.alert("Error",null,"Error","Aceptar");
+		}, function(){
+			return 1;
+			});
+}
+function borrarReserva(id){
+	accesoBD().transaction(function(tx){
+		tx.executeSql('DELETE FROM reservas WHER id ='+id);
+	}, function(err){
+		alert(err.code);
+	}, function(){
+		navigator.notification.alert("Borrado...", null, "Borrado","Aceptar");
+	});
+}
