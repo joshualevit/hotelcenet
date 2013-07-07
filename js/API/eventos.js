@@ -38,8 +38,9 @@ $(document).ready(function(e){
 				guardarReserva(nr1.attr('th'), $('#rHabitaciones').val(), $('#rDias').val(), $('#rPersonas').val());
 	   });
 	   
-	   $('a[href=#historial]').tap( "pageload", function(event) {
+	   $('a[href=#historial]').tap(function(event) {
 		leerHistorial();
+		//alert();
 		});
 	   
 	}, false);
